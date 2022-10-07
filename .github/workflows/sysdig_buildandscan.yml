@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v1
 
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag sysdiglabs/dummy-vuln-app:latest
@@ -21,7 +21,7 @@ jobs:
         # Tag of the image to analyse
         image-tag: "sysdiglabs/dummy-vuln-app:latest"
         # API token for Sysdig Scanning auth
-        sysdig-secure-token: ffa345ce-0f71-45ce-8448-d2268646a6fd
+        sysdig-secure-token: ${{ secrets.KUBELAB_SECURE_API_TOKEN }}
         dockerfile-path: ./Dockerfile
         input-type: docker-daemon
         run-as-user: root
