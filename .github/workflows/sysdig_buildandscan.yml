@@ -2,7 +2,7 @@ name: Sysdig - Build, scan and push Docker image
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 env:
   SYSDIG_URL: https://us2.app.sysdig.com
